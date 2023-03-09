@@ -47,7 +47,7 @@ public class Model {
 	public int getValAtPos(int x, int y) {
 		return gameboard[x][y];
 	}
-	
+	//deprecated
 	public Coord getNearestCoordWithValue(Coord coord, int val) {
 		int[] wallsDist = new int[4];
 		/*
@@ -69,7 +69,7 @@ public class Model {
 	}
 	
 	private int euklidDist(int x1, int x2, int y1, int y2) {
-		return -1;
+		return (int) Math.sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2)) ;
 	}
 	
 	public int getIndexOfSmallestVal(int[] arr) {
