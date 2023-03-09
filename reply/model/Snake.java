@@ -5,7 +5,16 @@ public class Snake {
 	Coord[] body;
 	int value;
 	Coord startingPoint;
+	Coord currPos;
 	
+	public Coord getCurrPos() {
+		return currPos;
+	}
+
+	public void setCurrPos(Coord currPos) {
+		this.currPos = currPos;
+	}
+
 	public int getLength() {
 		return length;
 	}
