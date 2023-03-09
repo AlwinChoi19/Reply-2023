@@ -8,29 +8,34 @@ public class Big_Boy_Snake {
   public static int[][] read_matrix(){
 
     try{
-      FileReader file= new FileReader("C:\\Users\\Alwin\\Documents\\Reply-2023-main\\Reply-2023-main\\Reply-2023\\00-example.txt");
+      FileReader file= new FileReader("00-example.txt");
       Scanner scan = new Scanner(file);
       int x = scan.nextInt();
       int y = scan.nextInt();
       int[][]newArr=new int[x][y];
-
+      
       scan.nextLine();
       scan.nextLine();
   
     
-      while(scan.hasNextLine()) {/* 
+      while(scan.hasNextLine()) { 
         String line = scan.nextLine();
-        System.out.println(line);*/
-
+        String[] result = line.split(" ");
+/*
         int line = scan.nextInt();
-        System.out.println(line);
+        System.out.println(line);*/
         for(int i=0;i<x-1; i++){
           for(int j=0;j<y-1; j++){
-            System.out.println(scan.nextInt());
-            newArr[x][y]=scan.nextInt();
+            System.out.println(result[i]);
+            if(result[i]=="*"){
+              newArr[i][j]=Integer.MIN_VALUE;
+            }else{
+              newArr[i][j]=Integer.parseInt(result[i]);
+            }
+            
           }
-          scan.nextLine();
-          ;
+          //scan.nextLine();
+          
         }
 
       }
