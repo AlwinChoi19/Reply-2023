@@ -69,10 +69,7 @@ public class Model {
 		}
 		return null;
 	}
-	
-	private int euklidDist(int x1, int x2, int y1, int y2) {
-		return (int) Math.sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2)) ;
-	}
+
 	
 	public int getIndexOfSmallestVal(int[] arr) {
 		int tmp = Integer.MAX_VALUE;

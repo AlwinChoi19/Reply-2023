@@ -4,6 +4,9 @@ import java.util.ArrayList;
 public class Function {
 
 
+    private int euklidDist(int x1, int x2, int y1, int y2) {
+        return (int) Math.sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2)) ;
+    }
     public int getDistance(Coord x1,  ArrayList<Coord> Coords) {
 
         int distance = 0;
