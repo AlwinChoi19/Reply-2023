@@ -9,37 +9,37 @@ public class Big_Boy_Snake {
 
     try{
       FileReader file= new FileReader("00-example.txt");
+
       Scanner scan = new Scanner(file);
       int x = scan.nextInt();
       int y = scan.nextInt();
-      int[][]newArr=new int[x][y];
+      int[][]theMatrix=new int[y][x];
       
       scan.nextLine();
       scan.nextLine();
   
     
       while(scan.hasNextLine()) { 
-        String line = scan.nextLine();
-        String[] result = line.split(" ");
-/*
-        int line = scan.nextInt();
-        System.out.println(line);*/
-        for(int i=0;i<x-1; i++){
-          for(int j=0;j<y-1; j++){
-            System.out.println(result[i]);
-            if(result[i]=="*"){
-              newArr[i][j]=Integer.MIN_VALUE;
-            }else{
-              newArr[i][j]=Integer.parseInt(result[i]);
-            }
-            
+        //String line = scan.nextLine();
+        //System.out.println(line);
+
+        //int line = scan.nextInt();
+        //System.out.println(line + " a");
+        for(int i=0;i<y; i++){
+          for(int j=0;j<x; j++){
+        	char check = scan.next().charAt(0);
+        	int tmp = check == '*' ? Integer.MIN_VALUE : ((int)check) - 48;
+            //System.out.println(i + " " + j + " " + tmp);
+            theMatrix[i][j]=tmp;
           }
+          //System.out.println("New line ");
+          scan.nextLine();
           //scan.nextLine();
           
         }
 
       }
-
+      return theMatrix;
     }catch (IOException e) {
       System.out.println("File not found.");
       e.printStackTrace();
