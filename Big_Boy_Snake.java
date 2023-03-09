@@ -56,9 +56,8 @@ public class Big_Boy_Snake {
       FileReader file= new FileReader("00-example.txt");
 
       Scanner scan = new Scanner(file);
-      int x = scan.nextInt();
-      int y = scan.nextInt();
-      int[][]theMatrix=new int[y][x];
+      scan.nextInt();
+      scan.nextInt();
       
       int snake_length = scan.nextInt();
       int[] snakeu= new int[snake_length];
