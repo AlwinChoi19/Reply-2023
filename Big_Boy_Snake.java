@@ -38,7 +38,7 @@ public class Big_Boy_Snake {
         }
 
       }
-
+      scan.close();
     }catch (IOException e) {
       System.out.println("File not found.");
       e.printStackTrace();
