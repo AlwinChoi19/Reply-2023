@@ -39,6 +39,7 @@ public class Big_Boy_Snake {
         }
 
       }
+      scan.close();
       return theMatrix;
     }catch (IOException e) {
       System.out.println("File not found.");
@@ -50,10 +51,49 @@ public class Big_Boy_Snake {
     return newArr;
   }
 
-  public static void write_text_file(){
+  public static int[] Snakeu(){
+    try{
+      FileReader file= new FileReader("00-example.txt");
+
+      Scanner scan = new Scanner(file);
+      int x = scan.nextInt();
+      int y = scan.nextInt();
+      int[][]theMatrix=new int[y][x];
+      
+      int snake_length = scan.nextInt();
+      int[] snakeu= new int[snake_length];
+      scan.nextLine();
+      
+      String line = scan.nextLine();
+      String[] result = line.split(" ");
+      
+      for(int i=0;i<snake_length; i++){
+        snakeu[i]=Integer.parseInt(result[i]);
+      }
+
+      scan.close();
+      return snakeu;
+    }catch (IOException e) {
+      System.out.println("File not found.");
+      e.printStackTrace();
+      
+    }
+    int[] failure= new int[1];
+
+    return failure;
+  }
+
+  public static void write_text_file(int[][] Matrixione){
     try {
       FileWriter myWriter = new FileWriter("00-output.txt");
-      myWriter.write("whatever man!");
+      for(int i=0;i<Matrixione.length;i++){
+        for(int j=0;j<Matrixione[0].length;j++)
+        {
+          myWriter.write(Matrixione[i][j]+" ");
+        }
+
+    }
+      
       myWriter.close();
       System.out.println("Successfully wrote to the file.");
     } catch (IOException e) {
@@ -63,8 +103,8 @@ public class Big_Boy_Snake {
   }
   public static void main(String[] args) {
     
-    read_matrix();
-            
+    int[][] testMatrix=read_matrix();
+    write_text_file(testMatrix);
     
     
   }

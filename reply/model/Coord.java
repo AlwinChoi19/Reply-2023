@@ -1,4 +1,4 @@
-
+package reply.model;
 public class Coord {
 	int x;
 	int y;

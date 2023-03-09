@@ -1,10 +1,11 @@
+package reply.model;
+import java.util.ArrayList;
 import java.util.Collections;
-
 public class Model {
 	private int[][] gameboard;
 	int gameboardSizeX, gameboardSizeY;
 	int[] availableRatings;
-	Coord currCoord = new Coord;
+	Coord currCoord = new Coord();
 	
 	public Model(int[][] gameboard, int gameboardSizeX, int gameboardSizeY){
 		this.gameboard = gameboard;
@@ -14,7 +15,7 @@ public class Model {
 	}
 	
 	public int[] getAvailableRatingsSorted() {
-		ArrayList<int> list = new ArrayList<>();
+		ArrayList<Integer> list = new ArrayList<Integer>();
 		for(int i = 0; i < gameboardSizeX; i++) {
 			for(int j = 0; j < gameboardSizeY; j++) {
 				if(list.contains(gameboard[i][j])) {
@@ -24,7 +25,7 @@ public class Model {
 			}
 		}
 		Collections.sort(list);
-		int[list.size()] arr = new int[];
+		int[] arr = new int[list.size()];
 		for(int i = 0; i < list.size(); i++) {
 			arr[i] = list.get(i);
 		}
@@ -33,10 +34,10 @@ public class Model {
 	
 	public Coord[] getRatings(int val){
 		ArrayList<Coord> list = new ArrayList<>();
-		for(int i = 0; i < gameboardSizeX) {
-			for(int j = 0; j < gameboardSizeY) {
-				if(gameboard[x][y] == val) {
-					list.add(new Coord(x,y));
+		for(int i = 0; i < gameboardSizeX; i++) {
+			for(int j = 0; j < gameboardSizeY; i++) {
+				if(gameboard[i][j] == val) {
+					list.add(new Coord(i,j));
 				}
 			}
 		}
@@ -64,11 +65,11 @@ public class Model {
 		for(int i = 0; i < getIndexOfSmallestVal(wallsDist); i++) {
 			
 		}
-		
+		return null;
 	}
 	
 	private int euklidDist(int x1, int x2, int y1, int y2) {
-		
+		return -1;
 	}
 	
 	public int getIndexOfSmallestVal(int[] arr) {
@@ -113,6 +114,6 @@ public class Model {
 		}else {
 			yPos += deltaY;
 		}
-		
+		return yPos;
 	}
 }
