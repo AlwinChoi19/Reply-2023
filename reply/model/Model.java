@@ -6,12 +6,14 @@ public class Model {
 	int gameboardSizeX, gameboardSizeY;
 	int[] availableRatings;
 	Coord currCoord = new Coord();
+	Snake[] snakes;
 	
-	public Model(int[][] gameboard, int gameboardSizeX, int gameboardSizeY){
+	public Model(int[][] gameboard, int gameboardSizeX, int gameboardSizeY, int nSnakes){
 		this.gameboard = gameboard;
 		this.gameboardSizeX = gameboardSizeX;
 		this.gameboardSizeY = gameboardSizeY;
 		this.availableRatings = getAvailableRatingsSorted();
+		this.snakes = new Snake[nSnakes];
 	}
 	
 	public int[] getAvailableRatingsSorted() {
@@ -116,4 +118,6 @@ public class Model {
 		}
 		return yPos;
 	}
+	
+	
 }
