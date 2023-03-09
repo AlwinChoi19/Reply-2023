@@ -96,7 +96,15 @@ public class Big_Boy_Snake {
     
     int[][] testMatrix=read_matrix();
     write_text_file(testMatrix);
-    
+
+    int [] snakeArray = Snakeu();
+    Snake[] snakes = new Snake[snakeArray.length];
+
+    for (int i = 0; i < snakeArray.length; i++) {
+      snakes[i] = new Snake(snakeArray[i]);
+    }
+
+    Model model = new Model(testMatrix, testMatrix.length, testMatrix[0].length, snakes);
     
   }
 }

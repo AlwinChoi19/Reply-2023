@@ -8,12 +8,12 @@ public class Model {
 	Coord currCoord = new Coord();
 	Snake[] snakes;
 	
-	public Model(int[][] gameboard, int gameboardSizeX, int gameboardSizeY, int nSnakes){
+	public Model(int[][] gameboard, int gameboardSizeX, int gameboardSizeY, Snake[] snakes){
 		this.gameboard = gameboard;
 		this.gameboardSizeX = gameboardSizeX;
 		this.gameboardSizeY = gameboardSizeY;
 		this.availableRatings = getAvailableRatingsSorted();
-		this.snakes = new Snake[nSnakes];
+		this.snakes = snakes;
 	}
 	
 	public int[] getAvailableRatingsSorted() {
